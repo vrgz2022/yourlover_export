@@ -1,0 +1,123 @@
+# 《YourLover》音频可视化系统使用说明
+
+## 简介
+本系统提供了两个示例组件，让您可以轻松创建随音乐节奏变化的可视化效果。您可以直接使用这些组件，或者参考它们的代码来创建自己的效果。
+
+## 示例组件
+
+### 1. ExampleBoxVisualizer - 简单盒子可视化器
+这是一个简单直观的示例，展示了如何创建一个随音乐节奏变化高度和颜色的盒子。
+
+#### 使用方法：
+1. 创建一个Cube
+2. 添加 ExampleBoxVisualizer 组件
+3. 调整参数：
+   - 音频设置
+     * amplification: 音频信号放大倍数（0.1-5）
+   - 高度设置
+     * minHeight: 最小高度（默认1）
+     * maxHeight: 最大高度（默认20）
+     * smoothSpeed: 平滑过渡速度（默认5）
+   - 颜色设置
+     * enableColorChange: 是否启用颜色变化
+     * baseColor: 基础颜色
+     * colorIntensity: 颜色变化强度
+
+### 2. ExampleVisualizer - 多效果可视化器
+这是一个功能更丰富的示例，提供了多种可视化效果供选择。
+
+#### 使用方法：
+1. 创建一个物体
+2. 添加 ExampleVisualizer 组件
+3. 从下拉列表选择效果类型：
+   - Particle（粒子系统）
+   - Light（灯光强度）
+   - Material（材质颜色）
+   - Rotation（物体旋转）
+4. 根据选择的效果类型调整相应参数
+
+#### 效果类型说明：
+
+##### Particle（粒子系统）
+- 需要：ParticleSystem组件
+- 效果：粒子大小随音乐变化
+- 参数：
+  * minParticleSize: 最小粒子大小
+  * maxParticleSize: 最大粒子大小
+
+##### Light（灯光）
+- 需要：Light组件
+- 效果：灯光强度随音乐变化
+- 参数：
+  * minIntensity: 最小亮度
+  * maxIntensity: 最大亮度
+
+##### Material（材质）
+- 需要：Renderer组件
+- 效果：材质颜色随音乐变化
+- 参数：
+  * baseColor: 基础颜色
+  * colorIntensity: 颜色变化强度
+
+##### Rotation（旋转）
+- 效果：旋转速度随音乐变化
+- 参数：
+  * rotationAxis: 旋转轴
+  * minRotationSpeed: 最小旋转速度
+  * maxRotationSpeed: 最大旋转速度
+
+## 创意工坊上传
+
+### 1. 准备工作
+1. 创建并调试好您的可视化效果
+2. 将物体制作成预制体
+3. 确保效果正常工作
+
+### 2. 创意工坊物品描述模板
+```
+这是一个音频可视化物体，使用了[ExampleBoxVisualizer/ExampleVisualizer]组件。
+
+效果说明：
+[描述您的效果，例如：随着音乐节奏变化高度和颜色]
+
+参数设置：
+- 音频放大：2
+- 最小高度：1
+- 最大高度：20
+- 平滑速度：5
+[根据实际使用的参数补充]
+
+使用方法：
+1. 将预制体拖入场景
+2. 根据需要调整参数
+3. 运行即可看到效果
+```
+
+## 注意事项
+1. 这些组件会自动处理音频采集，您无需额外设置
+2. 每个可视化物体都需要有自己的组件
+3. 可以通过调整amplification来控制效果的整体强度
+4. 可以通过调整smoothSpeed来控制效果的平滑程度
+5. 建议从小范围的参数值开始调整，找到最佳效果
+
+## 故障排除
+
+### 1. 没有声音反应
+- 检查系统是否有声音在播放
+- 尝试调高amplification值
+- 确认WasapiAudioSource组件正常工作
+
+### 2. 效果不够明显
+- 增加amplification值
+- 增加maxHeight/maxIntensity等最大值
+- 降低smoothSpeed值使反应更快
+
+### 3. 效果太剧烈
+- 降低amplification值
+- 减小最大值参数
+- 增加smoothSpeed值使变化更平滑
+
+## 技术支持
+如遇到问题，请访问我们的官方社区或QQ群寻求帮助。
+
+祝您创作愉快！ 
